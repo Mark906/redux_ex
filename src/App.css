@@ -1,0 +1,13 @@
+body{
+    background-color: #e1e1db;
+}
+
+.card-header, .card-footer{
+    background-color: #0b0338;
+    color: whitesmoke;
+}
+
+.bodyColorContainer {
+    width: 100%;
+    height: 300px;
+}
