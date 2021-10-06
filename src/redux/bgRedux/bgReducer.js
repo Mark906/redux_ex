@@ -8,7 +8,7 @@ let initialState = {
 
 let bgReducer = (state = initialState, action) => {
     //Destrutturo l'action
-    let {type, payload} = action;
+    let {type} = action;
     switch(type){
         case CHANGE_BG:
             return {
