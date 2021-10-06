@@ -1,12 +1,12 @@
 import React from 'react';
 import {useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {inc, dec, add, remove, reset} from "../../redux/countRedux/count.action";
+import {inc, dec, add, remove, reset, numberInput} from "../../redux/countRedux/count.action";
 import {COUNTER_KEY} from "../../redux/countRedux/countReducer";
 
 
 const Counter = () => {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState(0);
     let dispatch = useDispatch();
 
     let increment = () => {
@@ -31,9 +31,9 @@ const Counter = () => {
     }
 
     let addNumber = () => {
-        for (let i = 0; i<data; i++){
-            increment();
-        }
+        if(data == '') {}
+        else
+            dispatch(numberInput(data))
     }
 
     let resetNumber = () => {
@@ -62,12 +62,12 @@ const Counter = () => {
                                 <p className="text-center">Counter: <span>{viewCounter.counter}</span></p>
                             </div>
                             <div className="card-body d-flex justify-content-between">
-                                <button onClick={increment}>Inc (+1)</button>
-                                <button onClick={decrement}>Dec (-1)</button>
-                                <button onClick={addTen}>Add (+10)</button>
-                                <button onClick={removeTen}>Remove (-10)</button>
+                                <button className="p-1 btn btn-success" onClick={increment}>Inc (+1)</button>
+                                <button className="p-1 btn btn-danger" onClick={decrement}>Dec (-1)</button>
+                                <button className="p-1 btn btn-success" onClick={addTen}>Add (+10)</button>
+                                <button className="p-1 btn btn-danger" onClick={removeTen}>Remove (-10)</button>
                                 <input type="number" value={data} onChange={handle}/>
-                                <button onClick={addNumber}>ADD</button>
+                                <button className="p-1 btn" onClick={addNumber}>ADD</button>
                             </div>
                         </div>
                     </div>

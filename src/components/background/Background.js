@@ -30,7 +30,7 @@ const Background = () => {
                         <div className="card shadow">
                             {/* HEADER */}
                             <div className="card-header">
-                                <h1 className="h3 text-center">CHANGE BACKGROUND APP</h1>
+                                <h1 className="h3 text-center">CHANGE BACKGROUND</h1>
                             </div>
                             {/* SECOND HEADER */}
                             <div className="card-header d-flex justify-content-between">

@@ -1,4 +1,4 @@
-import { INC, DEC, ADD, REMOVE, RESET } from './count.actionTypes';
+import { INC, DEC, ADD, REMOVE, RESET, NUMBER } from './count.actionTypes';
 
 let inc = () => {
     return {
@@ -30,4 +30,11 @@ let reset = () => {
     }
 }
 
-export {inc, dec, add, remove, reset}
+let numberInput = (data) => {
+    return {
+        type: NUMBER,
+        payload: parseInt(data)
+    }
+}
+
+export {inc, dec, add, remove, reset, numberInput}

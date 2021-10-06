@@ -1,4 +1,4 @@
-import { INC, DEC, ADD, REMOVE, RESET } from './count.actionTypes';
+import {INC, DEC, ADD, REMOVE, RESET, NUMBER} from './count.actionTypes';
 
 let initialState = {
     counter: 0
@@ -7,7 +7,7 @@ let initialState = {
 export const COUNTER_KEY = 'counterStore';
 
 let counterReducer = (state = initialState, action) => {
-    let {type} = action;
+    let {type, payload} = action;
     switch(type){
         case INC:
             return {
@@ -28,6 +28,10 @@ let counterReducer = (state = initialState, action) => {
         case RESET:
             return {
                 counter: 0
+            }
+        case NUMBER:
+            return {
+                counter: state.counter + payload
             }
         default:
             return state
